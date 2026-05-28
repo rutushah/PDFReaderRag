@@ -1,6 +1,8 @@
 # PDFReaderRag
 
-A full-stack RAG (Retrieval-Augmented Generation) chatbot that answers questions about Nike PDF documents. Built with LangChain, OpenAI, Express, and React.
+A full-stack RAG (Retrieval-Augmented Generation) chatbot that lets you ask natural language questions about any PDF document. Built with LangChain, OpenAI, Express, and React.
+
+> **Example:** The included demo loads Nike annual reports (`nke-10k-2023.pdf`, `Nike-Inc-2025_10K.pdf`, etc.) — swap in any PDFs of your choice.
 
 ## Architecture
 
@@ -16,7 +18,7 @@ PDFReaderRag/
 
 ## How it works
 
-1. **Document loading** — Loads multiple Nike PDF reports using `PDFLoader` from `@langchain/community`
+1. **Document loading** — Loads one or more PDF files using `PDFLoader` from `@langchain/community`
 2. **Chunking** — Splits documents with `RecursiveCharacterTextSplitter` (1000 chars, 200 overlap)
 3. **Embedding** — Embeds chunks using OpenAI `text-embedding-3-large`
 4. **Vector store** — Stores embeddings in an in-memory vector store (`MemoryVectorStore`)
@@ -43,10 +45,14 @@ Create a `.env` file:
 OPENAI_API_KEY=your_openai_api_key_here
 ```
 
-Place PDF files in `Backend/documents/`:
-- `nke-10k-2023.pdf`
-- `nike-growth-story.pdf`
-- `Nike-Inc-2025_10K.pdf`
+Place your PDF files in `Backend/documents/` and update the `pdfPaths` array in `server.ts`:
+
+```ts
+const pdfPaths = [
+  "documents/your-document.pdf",
+  "documents/another-document.pdf",
+];
+```
 
 Start the server:
 
@@ -72,12 +78,12 @@ Opens on `http://localhost:5173` by default.
 
 **Request body:**
 ```json
-{ "question": "When was Nike incorporated?" }
+{ "question": "What is the main topic of the document?" }
 ```
 
 **Response:**
 ```json
-{ "answer": "Nike was incorporated in 1968..." }
+{ "answer": "..." }
 ```
 
 ## Tech Stack
