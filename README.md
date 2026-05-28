@@ -82,10 +82,14 @@ PORT=3000
 ```bash
 # Start the backend
 cd Backend
-npm run dev
+npx tsx server.ts
 ```
 
-Then open the frontend in your browser.
+```bash
+# Start the frontend (in a separate terminal)
+cd ../frontend
+npm run dev
+```
 
 ---
 
