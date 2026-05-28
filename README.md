@@ -83,6 +83,25 @@ npx tsx server.ts
 
 The server starts on `http://localhost:3000`.
 
+### Standalone LangGraph agent (`ragAgentGraph.ts`)
+
+Add your LangSmith keys to `.env` to enable tracing:
+
+```
+LANGSMITH_API_KEY=your_langsmith_api_key_here
+LANGSMITH_TRACING=true
+LANGSMITH_PROJECT=pdf-reader-rag
+```
+
+Then serve the agent locally with the LangGraph CLI:
+
+```bash
+cd Backend
+npx @langchain/langgraph-cli dev
+```
+
+This reads `langgraph.json`, starts a LangGraph server, and exposes the `rag_agent` graph. Open the LangGraph Studio URL printed in the terminal to run and trace the agent interactively.
+
 ### Frontend
 
 ```bash
