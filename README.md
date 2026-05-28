@@ -123,6 +123,12 @@ PDFReaderRag/
 - [ ] Deploy to Vercel + Railway
 
 ---
+## 📸 Demo
+
+| Upload PDF | Ask Questions |
+|------------|---------------|
+| ![Upload](./assets/s1.png) | ![Chat](./assets/s3.png) 
+|![Response](./assets/S2.png) 
 
 ## 📜 License
 
