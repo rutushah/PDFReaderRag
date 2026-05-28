@@ -97,7 +97,7 @@ Then serve the agent locally with the LangGraph CLI:
 
 ```bash
 cd Backend
-npx @langchain/langgraph-cli dev
+npx langgraphjs dev
 ```
 
 This reads `langgraph.json`, starts a LangGraph server, and exposes the `rag_agent` graph. Open the LangGraph Studio URL printed in the terminal to run and trace the agent interactively.
